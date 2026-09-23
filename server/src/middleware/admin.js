@@ -1,0 +1,1 @@
+export function adminGuard(req,res,next){const key=process.env.ADMIN_KEY;if(!key)return res.status(503).json({message:'ADMIN_KEY is not configured'});if(req.header('x-admin-key')!==key)return res.status(401).json({message:'Unauthorized'});next();}
