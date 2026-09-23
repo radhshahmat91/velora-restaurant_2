@@ -1,6 +1,13 @@
 import 'dotenv/config';
+import dns from 'dns';
 import mongoose from 'mongoose';
 import Food from '../models/Food.js';
+
+dns.setServers([
+  '8.8.8.8',
+  '8.8.4.4'
+]);
+
 const foods=[
 ['Truffle Margherita','Pizza',890,'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=900&q=85','Wood-fired pizza, tomato, fior di latte, basil and black truffle oil.','Chef pick',4.9],
 ['Butter Chicken','Indian',620,'https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=900&q=85','Silky tomato curry with charred chicken, butter and aromatic spices.','Popular',4.8],
